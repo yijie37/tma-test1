@@ -19,16 +19,16 @@ export default function Home() {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user as UserData)
     }
-  })
+  }, [])
 
-  const handleButton1Click = () => {
+  const handleButton1Click = async () => {
     // 处理按钮1的逻辑
     // if (userData) {
     //     alert(`Button 1 clicked! User ID: ${userData.id}`);
     // }
   }
 
-  const handleButton2Click = () => {
+  const handleButton2Click = async () => {
     // 处理按钮1的逻辑
     // if (userData) {
     //     alert(`Button 1 clicked! User ID: ${userData.id}`);
@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <main className="p-4">
+    <main className="p-4 items-center">
       {
         userData ?
           (
@@ -52,14 +52,14 @@ export default function Home() {
                 <li>Language Code: {userData.language_code}</li>
                 <li>Is Premium: {userData.is_premium}</li> */}
               </ul>
-              {/* <>
+              <>
                 <button onClick={handleButton1Click} className="px-4 py-2 bg-blue-500 text-white rounded">
                   Invite Friends
                 </button>
                 <button onClick={handleButton2Click} className="px-4 py-2 bg-blue-500 text-white rounded">
                   Claim   
                 </button>
-              </> */}
+              </>
             </>
           ) :
           (
