@@ -51,14 +51,14 @@ export default function Home() {
                 <li>Language Code: {userData.language_code}</li>
                 <li>Is Premium: {userData.is_premium}</li> */}
               </ul>
-              {/* <div className="flex flex-col items-center space-y-4 mt-4">
+              <div>
                 <button onClick={handleButton1Click} className="px-4 py-2 bg-blue-500 text-white rounded">
                   Invite Friends
                 </button>
                 <button onClick={handleButton2Click} className="px-4 py-2 bg-blue-500 text-white rounded">
                   Claim   
                 </button>
-              </div> */}
+              </div>
             </>
           ) :
           (
