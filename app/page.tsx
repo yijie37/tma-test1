@@ -40,9 +40,10 @@ export default function Home() {
           (
             <>
               <h1 className="text-2xl font-bold mb-4 items-center">User Data</h1>
-              <ul className="mb-4 text-center">
+              <ul>
                 <li>ID: {userData.id}</li>
                 <li>User Name: {userData.first_name}</li>
+                <li>Invite Number: 999</li>
                 <li>50000 $PPPPP</li>
                 
                 {/* <li>Last Name: {userData.last_name}</li> */}
