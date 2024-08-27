@@ -55,7 +55,7 @@ export default function Home() {
     // }
   }
 
-  const calculateYearsSince = async (dateString: string) => {
+  function calculateYearsSince(dateString: string) {
     const now = new Date();
     const [year, month] = dateString.split('.').map(Number);
     const registrationDate = new Date(year, month - 1);
@@ -67,18 +67,18 @@ export default function Home() {
     let low = 0;
     let high = userRegistrations.length - 1;
   
-    // while (low <= high) {
-    //     const mid = Math.floor((low + high) / 2);
-    //     const midValue = userRegistrations[mid].id;
+    while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
+        const midValue = userRegistrations[mid].id;
   
-    //     if (midValue === userId) {
-    //         return calculateYearsSince(userRegistrations[mid].registrationDate);
-    //     } else if (midValue < userId) {
-    //         low = mid + 1;
-    //     } else {
-    //         high = mid - 1;
-    //     }
-    // }
+        if (midValue === userId) {
+            return calculateYearsSince(userRegistrations[mid].registrationDate);
+        } else if (midValue < userId) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
   
     return 1;  
   }
