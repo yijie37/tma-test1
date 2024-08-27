@@ -66,21 +66,26 @@ export default function Home() {
   function binarySearch(userId: number) {
     let low = 0;
     let high = userRegistrations.length - 1;
-  
+    let resultIndex = -1;
+
     while (low <= high) {
+      
         const mid = Math.floor((low + high) / 2);
         const midValue = userRegistrations[mid].id;
-  
-        if (midValue === userId) {
-            return calculateYearsSince(userRegistrations[mid].registrationDate);
-        } else if (midValue < userId) {
+
+        if (midValue <= userId) {
+            resultIndex = mid;  // Potential candidate, move low upwards to find a closer one
             low = mid + 1;
         } else {
             high = mid - 1;
         }
     }
-  
-    return 1;  
+
+    if (resultIndex !== -1) {
+        return calculateYearsSince(userRegistrations[resultIndex].registrationDate);
+    }
+
+    return 1; 
   }
 
   return (
