@@ -31,10 +31,15 @@ const userRegistrations: UserRegistration[] = [
 
 export default function Home() {
   const [userData, setUserData] = useState<UserData | null>(null)
+  // const [ref, setReffed] = useState("");
 
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user as UserData)
+    }
+    if (WebApp.initDataUnsafe.start_param) {
+      // post ref request to server
+      // check response and set state ref
     }
   }, [])
 
@@ -62,20 +67,20 @@ export default function Home() {
     let low = 0;
     let high = userRegistrations.length - 1;
   
-    while (low <= high) {
-        const mid = Math.floor((low + high) / 2);
-        const midValue = userRegistrations[mid].id;
+    // while (low <= high) {
+    //     const mid = Math.floor((low + high) / 2);
+    //     const midValue = userRegistrations[mid].id;
   
-        if (midValue === userId) {
-            return calculateYearsSince(userRegistrations[mid].registrationDate);
-        } else if (midValue < userId) {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
+    //     if (midValue === userId) {
+    //         return calculateYearsSince(userRegistrations[mid].registrationDate);
+    //     } else if (midValue < userId) {
+    //         low = mid + 1;
+    //     } else {
+    //         high = mid - 1;
+    //     }
+    // }
   
-    throw new Error('User ID not found.');
+    return 1;  
   }
 
   return (
@@ -88,7 +93,7 @@ export default function Home() {
               <ul>
                 <li>ID: {userData.id}</li>
                 <li>User Name: {userData.first_name}</li>
-                <li>Register Year: {binarySearch(userData.id)}</li>
+                <li>Register Years: {binarySearch(userData.id)}</li>
                 <li>Invite Number: 999</li>
                 <li>50000 $PPPPP</li>
                 
