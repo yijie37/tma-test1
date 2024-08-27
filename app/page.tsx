@@ -63,7 +63,7 @@ export default function Home() {
     return diff / (1000 * 60 * 60 * 24 * 365);  // returns decimal years
   }
   
-  const binarySearch = async (userId: number) => {
+  function binarySearch(userId: number) {
     let low = 0;
     let high = userRegistrations.length - 1;
   
