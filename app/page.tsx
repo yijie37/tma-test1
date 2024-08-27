@@ -93,7 +93,8 @@ export default function Home() {
               <ul>
                 <li>ID: {userData.id}</li>
                 <li>User Name: {userData.first_name}</li>
-                <li>Register Years: {binarySearch(userData.id)}</li>
+                <li>Data Length: {userRegistrations.length}</li>
+                <li>Register Years: {Math.floor(binarySearch(userData.id))}</li>
                 <li>Invite Number: 999</li>
                 <li>50000 $PPPPP</li>
                 
